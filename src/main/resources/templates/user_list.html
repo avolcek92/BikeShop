@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+
+<body>
+<div class="container">
+    <header th:insert="blocks/header :: header"></header>
+    <div class="list">
+        <tr th:each="user : ${users}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.admin}"></td>
+            <td><a th:href="@{/removeUser/{id}(id=${user.id})}">remove</a></td>
+            <td><a th:href="@{/makeAdmin/{id}(id=${user.id})}">admin</a></td>
+            <br>
+        </tr>
+    </div>
+</div>
+</body>
+</html>

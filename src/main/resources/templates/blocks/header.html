@@ -1,0 +1,12 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="slide-nav">
+        <a href="/">Main</a>
+        <a href="/products">Bikes</a>
+        <a href="/login">Login</a>
+        <a href="/addUser">Registration</a>
+        <a sec:authorize="hasRole('ADMIN')">
+            <a href="/addProduct">Add Bike</a>
+            <a href="/users">Users</a>
+        </a>
+    </div>
+</div>
